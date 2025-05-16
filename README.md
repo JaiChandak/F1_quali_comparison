@@ -1,6 +1,6 @@
 # F1 Quali Comparison
 
-f1teammatequali.com
+[f1teammatequali.com](https://www.f1teammatequali.com)
 
 A web app that allows users to evaluate a driver's qualifying performance. Users can compare how well a driver did:
   - compared to their teammate across a season
