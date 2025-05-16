@@ -1,7 +1,7 @@
 from datetime import datetime
 from airflow import DAG
 from airflow.operators.python import PythonOperator
-from pipelines.api_pipeline import _seasons, _circuits, _constructors, _drivers, _races, _quali
+from pipelines.api import _seasons, _circuits, _constructors, _drivers, _races, _quali
 
 with DAG('f1_quali_dag', start_date=datetime(2025, 1, 1), 
     schedule_interval='@monthly', catchup=False) as dag:
