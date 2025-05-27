@@ -1,0 +1,56 @@
+// for https://dbdiagram.io/d
+
+Table Seasons {
+  season integer [primary key]
+}
+
+Table Circuits {
+  circuit_id integer [primary key]
+  circuit_ref varchar
+  circuit_name varchar
+  circuit_country varchar
+}
+
+Table Constructors {
+  constructor_id integer [primary key]
+  constructor_ref varchar
+  circuit_name varchar
+  circuit_country varchar
+}
+
+Table Drivers {
+  driver_id integer [primary key]
+  driver_ref varchar
+  first_name varchar
+  last_name varchar
+  dob date
+  driver_nationality varchar
+}
+
+Table Races {
+  race_id integer [primary key]
+  season integer
+  round integer
+  race_name varchar
+  circuit_id integer
+  race_date date
+}
+
+Table Quali {
+  quali_id integer [primary key]
+  race_id integer
+  driver_id integer
+  constructor_id integer
+  grid_position integer
+  q1 integer
+  q2 integer
+  q3 integer
+}
+
+Ref: Seasons.season > Races.season
+Ref: Circuits.circuit_id > Races.circuit_id
+
+
+Ref: Races.race_id > Quali.race_id
+Ref: Drivers.driver_id > Quali.driver_id
+Ref: Constructors.constructor_id > Quali.constructor_id
