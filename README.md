@@ -18,4 +18,3 @@ A web app that allows users to evaluate a driver's qualifying performance. Users
 6. **Beanstalk**: Hosting the Flask web app that users can interact with
 
 ## Data Model
-![Data Model](https://github.com/JaiChandak/F1_quali_comparison/blob/main/images/data_model.PNG)
