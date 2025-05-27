@@ -9,7 +9,7 @@ A web app that allows users to evaluate a driver's qualifying performance. Users
   - compared to the fastest driver across a season
 
 ## Data Pipeline
-![Project Pipeline](https://github.com/JaiChandak/F1_quali_comparison/blob/main/f1_quali_web_app.png)
+![Project Pipeline](https://github.com/JaiChandak/F1_quali_comparison/blob/main/images/f1_quali_web_app.png)
 1. **Jolpica API**: Data source
 2. **Airflow**: Orchestrates the ETL process
 3. **S3**: Data storage (raw)
