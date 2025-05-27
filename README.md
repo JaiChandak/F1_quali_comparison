@@ -16,3 +16,6 @@ A web app that allows users to evaluate a driver's qualifying performance. Users
 4. **Lambda**: Tasked to insert data from csv to PostgreSQL database
 5. **RDS**: Data storage (cleaned)
 6. **Beanstalk**: Hosting the Flask web app that users can interact with
+
+## Data Model
+![Data Model](https://github.com/JaiChandak/F1_quali_comparison/blob/main/images/data_model.PNG)
