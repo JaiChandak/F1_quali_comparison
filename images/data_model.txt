@@ -1,33 +1,8 @@
-// for https://dbdiagram.io/d
-
-Table Seasons {
+Table seasons {
   season integer [primary key]
 }
 
-Table Circuits {
-  circuit_id integer [primary key]
-  circuit_ref varchar
-  circuit_name varchar
-  circuit_country varchar
-}
-
-Table Constructors {
-  constructor_id integer [primary key]
-  constructor_ref varchar
-  circuit_name varchar
-  circuit_country varchar
-}
-
-Table Drivers {
-  driver_id integer [primary key]
-  driver_ref varchar
-  first_name varchar
-  last_name varchar
-  dob date
-  driver_nationality varchar
-}
-
-Table Races {
+Table races {
   race_id integer [primary key]
   season integer
   round integer
@@ -36,7 +11,30 @@ Table Races {
   race_date date
 }
 
-Table Quali {
+Table circuits {
+  circuit_id integer [primary key]
+  circuit_ref varchar
+  circuit_name varchar
+  circuit_country varchar
+}
+
+Table drivers {
+  driver_id integer [primary key]
+  driver_ref varchar
+  first_name varchar
+  last_name varchar
+  driver_nationality varchar
+  dob date
+}
+
+Table constructors {
+  constructor_id integer [primary key]
+  constructor_ref varchar
+  constructor_name varchar
+  constructor_nationality varchar
+}
+
+Table quali {
   quali_id integer [primary key]
   race_id integer
   driver_id integer
@@ -47,10 +45,39 @@ Table Quali {
   q3 integer
 }
 
-Ref: Seasons.season > Races.season
-Ref: Circuits.circuit_id > Races.circuit_id
+Table results {
+  result_id integer [primary key]
+  race_id integer
+  driver_id integer
+  constructor_id integer
+  grid_position integer
+  final_position integer
+  points float
+  time varchar
+}
 
+Table sprint_results {
+  sprint_result_id integer [primary key]
+  race_id integer
+  driver_id integer
+  constructor_id integer
+  grid_position integer
+  final_position integer
+  points float
+  time varchar
+}
 
-Ref: Races.race_id > Quali.race_id
-Ref: Drivers.driver_id > Quali.driver_id
-Ref: Constructors.constructor_id > Quali.constructor_id
+Ref: seasons.season > races.season
+Ref: circuits.circuit_id > races.circuit_id
+
+Ref: races.race_id > quali.race_id
+Ref: drivers.driver_id > quali.driver_id
+Ref: constructors.constructor_id > quali.constructor_id
+
+Ref: races.race_id > results.race_id
+Ref: drivers.driver_id > results.driver_id
+Ref: constructors.constructor_id > results.constructor_id
+
+Ref: races.race_id > sprint_results.race_id
+Ref: drivers.driver_id > sprint_results.driver_id
+Ref: constructors.constructor_id > sprint_results.constructor_id
